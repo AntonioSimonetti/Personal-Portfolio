@@ -1,0 +1,38 @@
+.no-wrap-text {
+    white-space: nowrap;
+  }
+
+  .interactive-text {
+    margin: 0; 
+    padding: 0; 
+    transition: color 0.5s linear; 
+  }
+  
+  .interactive-text:hover {
+    cursor: pointer; 
+    color: var(--accent);
+}
+
+.statueDiv {
+    animation: borderTransition 4s linear infinite;  
+    border-color: var(--dark-background);
+}
+
+@keyframes borderTransition {
+    0% {
+        border-color: var(--text);
+    }
+    25% {
+        border-color: var(--accent);
+    }
+    50% {
+        border-color: var(--dark-background);
+    }
+    75% {
+        border-color: var(--accent);
+    }
+    100% {
+        border-color: var(--text);
+    }
+   
+}
