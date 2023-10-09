@@ -92,7 +92,7 @@ export default function Navbar() {
       backdropFilter: "blur(5px)",
       transition: "top 0.3s ease",
       animation: positionSticky ? "none" : "slideDown 0.5s forwards",    //The animation is defined inside Navbar.css file
-      color: "var(--text)",
+      color: positionSticky ? "var(--text)" : "var(--accent)",
       alignItems: "center", 
     },
 
@@ -100,32 +100,37 @@ export default function Navbar() {
       fontFamily: "var(--second-font)",
       fontSize: "15px",
       fontWeight: "500",
-    }
+      cursor: "pointer",  
+    },
+
+
+ 
+    
   };
 
 
   return (
     <Box sx={{ flexGrow: 1 }} >
-      <AppBar style={styles.nav}>
+      <AppBar style={styles.nav} >
         <Toolbar style={{ gap: "1rem"}}>
           <div style={{display: "flex", gap:"0.25rem", justifyContent: "center", alignItems:"center"}}>
-           <Typography style={{color: "var(--accent)", fontSize: "15px"}}>01</Typography>
-           <Typography style={{color: "var(--accent)", fontSize: "30px", marginTop: "-11px", marginLeft: "-4px"}}>.</Typography>
-           <Typography variant="h6" component="div" style={styles.navTypography} sx={{ flexGrow: 1 }}>
+           <Typography style={{color: positionSticky ? "var(--accent)" : "var(--text)", fontSize: "15px"}}className="nav-number">01</Typography>
+           <Typography style={{color: positionSticky ? "var(--accent)" : "var(--text)", fontSize: "30px", marginTop: "-11px", marginLeft: "-4px"}}className="nav-point">.</Typography>
+           <Typography variant="h6" component="div" style={styles.navTypography} sx={{ flexGrow: 1 }} className="navbar">
             About
            </Typography>
           </div>
           <div style={{display: "flex", gap:"0.25rem", justifyContent: "center", alignItems:"center"}}>
-           <Typography style={{color: "var(--accent)", fontSize: "15px"}}>02</Typography>
-           <Typography style={{color: "var(--accent)", fontSize: "30px", marginTop: "-11px", marginLeft: "-4px"}}>.</Typography>
-           <Typography variant="h6" component="div" style={styles.navTypography} sx={{ flexGrow: 1 }}>
+          <Typography style={{color: positionSticky ? "var(--accent)" : "var(--text)", fontSize: "15px"}}className="nav-number">02</Typography>
+          <Typography style={{color: positionSticky ? "var(--accent)" : "var(--text)", fontSize: "30px", marginTop: "-11px", marginLeft: "-4px"}}className="nav-point">.</Typography>
+           <Typography variant="h6" component="div" style={styles.navTypography} sx={{ flexGrow: 1 }} className="navbar">
             Experience
            </Typography>
           </div>
           <div style={{display: "flex", gap:"0.25rem", justifyContent: "center", alignItems:"center"}}>
-           <Typography style={{color: "var(--accent)", fontSize: "15px"}}>03</Typography>
-           <Typography style={{color: "var(--accent)", fontSize: "30px", marginTop: "-11px", marginLeft: "-4px"}}>.</Typography>
-           <Typography variant="h6" component="div" style={styles.navTypography} sx={{ flexGrow: 1 }}>
+          <Typography style={{color: positionSticky ? "var(--accent)" : "var(--text  )", fontSize: "15px"}}className="nav-number">03</Typography>
+          <Typography style={{color: positionSticky ? "var(--accent)" : "var(--text)", fontSize: "30px", marginTop: "-11px", marginLeft: "-4px"}}className="nav-point">.</Typography>
+           <Typography variant="h6" component="div" style={styles.navTypography} sx={{ flexGrow: 1 }} className="navbar">
             Contact
            </Typography>
           </div>

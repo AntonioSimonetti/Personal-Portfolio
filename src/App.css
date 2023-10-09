@@ -1,6 +1,7 @@
 :root {
     --dark-background: #121212;
     --accent: #CDFF59 ;
+    --accent-two: #800080;
     --text: #d4ffd4 ;
     --main-font: 'Calibre','Inter','San Francisco','SF Pro Text',system-ui,sans-serif;
     --second-font: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;

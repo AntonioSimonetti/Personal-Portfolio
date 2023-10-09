@@ -1,21 +1,103 @@
 .no-wrap-text {
     white-space: nowrap;
-  }
+}
 
-  .interactive-text {
+.interactive-text {
     margin: 0; 
     padding: 0; 
     transition: color 0.5s linear; 
-  }
+}
   
-  .interactive-text:hover {
+.interactive-text:hover {
     cursor: pointer; 
     color: var(--accent);
 }
 
 .statueDiv {
+    cursor: pointer;
     animation: borderTransition 4s linear infinite;  
     border-color: var(--dark-background);
+}
+
+.statueDiv:hover {
+    animation: backgroundTransition 4s linear infinite; 
+}
+
+.scrollerDiv {
+    position: relative;
+    width: 100%;
+}
+
+
+.scroll-downs {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width :34px;
+    height: 55px;
+}
+  
+.mousey {
+    width: 3px;
+    padding: 10px 15px;
+    height: 35px;
+    border: 2px solid red;
+    border-radius: 25px;
+    opacity: 0.75;
+    box-sizing: content-box;
+    animation: mouseColor 6s linear infinite;  
+}
+  
+.scroller {
+    width: 3px;
+    height: 10px;
+    border-radius: 25%;
+    background-color: var(--text);
+    animation: scroll 6s cubic-bezier(.15,.41,.69,.94) infinite, borderTransitionScroller 3s linear infinite;
+}
+
+.heroBtn {
+    transition: box-shadow 0.5s linear !important;
+}
+
+.heroBtn:hover {
+    transition: box-shadow 0.5s linear;
+    background-color: transparent !important;  /*Remove default Mui confing on the button*/
+    box-shadow: 0 0 15px var(--accent) ;
+}
+
+.heroBtn span:hover {
+}
+
+
+/* ANIMATION KEYFRAMES */
+  
+@keyframes mouseColor {
+    0% {
+        border-color: var(--text);
+    }
+
+    100% {
+        border-color: var(--accent);
+    }
+}
+      
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    33.33% {
+        transform: translateY(0);
+    }
+    66.66% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(30px);
+    }
 }
 
 @keyframes borderTransition {
@@ -26,7 +108,7 @@
         border-color: var(--accent);
     }
     50% {
-        border-color: var(--dark-background);
+        border-color: var(--accent-two);
     }
     75% {
         border-color: var(--accent);
@@ -36,3 +118,114 @@
     }
    
 }
+
+@keyframes backgroundTransition {
+    0% {
+        background-color: var(--text);
+    }
+    25% {
+        background-color: var(--accent);
+    }
+    50% {
+        background-color: var(--accent-two);
+    }
+    75% {
+        background-color: var(--accent);
+    }
+    100% {
+        background-color: var(--text);
+    }
+   
+}
+
+@keyframes borderTransitionScroller {
+    0% {
+        background-color: var(--text);
+    }
+    25% {
+        background-color: var(--accent);
+    }
+    50% {
+        background-color:var(--accent-two);
+    }
+    75% {
+        background-color: var(--accent);
+    }
+    100% {
+        background-color: var(--text);
+    }
+   
+}
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 850px) {
+    .scroll-downs {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        margin-top: 2rem !important;
+        width :34px;
+        height: 55px;
+      }  
+  }
+
+@media screen and (min-width: 1920px) {
+    .statueDiv {
+        margin-left: 5rem !important;
+    }
+  }
+
+@media screen and (min-width: 2560px) {
+    .statueDiv {
+        margin-left: 30rem !important;
+    }
+  }
+
+@media screen and (min-width: 3840px) {
+    .statueDiv {
+        margin-left: 55rem !important;
+    }
+  }
+
+
+@media screen and (max-width: 320px) {
+    .departure-board-animation {
+        font-size: 12px !important;
+    }
+
+    .no-wrap-text {
+        font-size: 20px !important;
+    }  
+  }
+
+@media screen and (max-width: 240px) {
+    .departure-board-animation {
+        font-size: 7px !important;
+    }
+
+    .no-wrap-text {
+        font-size: 13px !important;
+    }
+    
+    .lastParaHero {
+        font-size: 10px !important;
+    }
+
+    .heroBtn {
+        padding: 1px !important;
+        width: 20px !important;
+        height: 30px !important;
+        font-size: 6px !important;
+    }
+
+    .statueDiv img {
+        width: 60px !important;
+        height: 200px !important;
+    }
+  }
+
+ 

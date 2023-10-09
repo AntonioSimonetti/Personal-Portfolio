@@ -8,3 +8,46 @@
       opacity: 1;
     }
   }
+
+  .navbar {
+    transition: color 0.5s linear; 
+
+  }
+
+  .navbar:hover {
+    color: var(--accent);
+  }
+
+
+
+  @media screen and (max-width: 240px) {
+
+    .nav-number {
+      font-size: 7px !important;
+    }
+
+    .nav-point {
+      font-size: 20px !important;
+    }
+
+     .navbar {
+      font-size: 8px !important;
+     }
+  }
+
+
+  @media screen and (max-width: 320px) {
+    .nav-number {
+      font-size: 10px !important;
+    }
+
+    .nav-point {
+      font-size: 30px !important;
+    }
+
+     .navbar {
+      font-size: 15px !important;
+     }
+  }
+  
+
