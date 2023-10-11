@@ -192,14 +192,18 @@
   }
 
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 241px) and (max-width: 320px) {
     .departure-board-animation {
         font-size: 12px !important;
     }
 
     .no-wrap-text {
         font-size: 20px !important;
-    }  
+    }
+    
+    .planet {
+        margin-top: 0.2rem !important;
+    }
   }
 
 @media screen and (max-width: 240px) {
@@ -225,6 +229,10 @@
     .statueDiv img {
         width: 60px !important;
         height: 200px !important;
+    }
+
+    .planet {
+        margin-top: 0.2rem !important;
     }
   }
 

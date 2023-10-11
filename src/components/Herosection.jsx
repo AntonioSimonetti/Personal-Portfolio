@@ -33,7 +33,7 @@ const Herosection = () => {
     }, []);
 
     const handleTextColorToggle = () => {
-      // Funzione per cambiare il colore del testo in modo toggle
+      // Fn to change the name's color
       if (textColor === "var(--text)") {
         setTextColor("var(--accent)");
       } else if (textColor === "var(--accent)") {
@@ -44,6 +44,7 @@ const Herosection = () => {
     };
 
     const styles = {
+
         heroSection: {
           display: 'flex',
           justifyContent: 'space-between',
@@ -52,6 +53,7 @@ const Herosection = () => {
           maxWidth: "99%",
           //border: "2px solid red"
         },
+
         column: {
             padding:"20px",
             height: isSmScreen ? "20rem" : "40rem",
@@ -63,6 +65,7 @@ const Herosection = () => {
             alignItems: 'center',    
             //border: "2px solid red",
         },
+
         columnOne: {
             display: "flex",
             justifyContent: "flex-start",
@@ -81,10 +84,8 @@ const Herosection = () => {
             overflow: "hidden", 
             fontFamily: "var(--main-font)",
             fontSize: "5rem",
-            fontWeight: "bolder",
-            
-            
-         },
+            fontWeight: "bolder",   
+        },
 
          smTypography: {
             fontSize: '1.5rem',  
@@ -94,7 +95,7 @@ const Herosection = () => {
             width: '100%',
             height: 'auto',
             objectFit: "contain",
-          },
+        },
 
         headingStyle : {
             fontFamily: "var(--main-font)",
@@ -102,15 +103,15 @@ const Herosection = () => {
             fontSize: isSmScreen ? "26px": "64px",
             fontWeight: 'bold',
             marginTop: "1rem"
-          },
+        },
         
-          headingStyleTwo : {
+        headingStyleTwo : {
             fontFamily: "var(--main-font)",
             color: "var(--text)",
             fontSize: isSmScreen ? "26px": "64px",
             fontWeight: 'bold',
             marginTop: "1rem"
-          },
+        },
         
         paraStyle : {
             color: 'var(--text)',
@@ -119,24 +120,23 @@ const Herosection = () => {
             textAlign: "start",
             fontSize: "18px",
             marginTop: "2rem",
-          },
+        },
         
         btnStyle : {
             fontFamily: "var(--second-font)",
             color: 'var(--accent)',
             border: "2px solid var(--accent)",
-          },
+        },
 
 
-          statue:  {
+        statue:  {
             width: isSmScreen ? "180px" : "350px",
             height: isSmScreen ? "280px" : "500px",
             marginLeft: isSmScreen ? "0rem" : "7.5rem",
             marginTop:  isSmScreen ? "0rem" : "2.5rem",
-         
-          },
+        },
 
-          statueDiv:  {
+        statueDiv:  {
             width: isSmScreen ? "100%" : "600px",
             height: isSmScreen ? "350px" : "600px",
             marginLeft: isSmScreen ? "0rem" : "0rem",
@@ -145,10 +145,7 @@ const Herosection = () => {
             display: isSmScreen ? "flex" : "block",
             justifyContent: isSmScreen ? "center" : "none",
             alignItems: isSmScreen ? "center" : "none",
-          },
-
-         
-
+        },       
       };
 
       let theme = createTheme();
@@ -168,7 +165,7 @@ const Herosection = () => {
               <Typography variant="h3" style={styles.headingStyleTwo} className="no-wrap-text" >
               I build things.
               </Typography>
-              <svg viewBox="0 0 160 160" style={{ position: "absolute", top: "84%", width: "10.5%", height: "12.5%", left: "66%" }}>
+              <svg viewBox="0 0 160 160" style={{ position: "absolute", top: "84%", width: "10.5%", height: "12.5%", left: "66%" }} className="planet">
                 <circle cx="80" cy="80" r="50" fill="var(--accent)" className="my-circle" />
                    <g transform="matrix(0.866, -0.5, 0.25, 0.433, 80, 80)">
                       <path d="M 0,70 A 65,70 0 0,0 65,0 5,5 0 0,1 75,0 75,70 0 0,1 0,70Z" fill="var(--text)" stroke="red">
