@@ -154,7 +154,7 @@
   }
 
   .second-list {
-    margin-top: -5rem !important;
+    margin-top: -4rem !important;
   }
 
   .second-list-text {
@@ -173,6 +173,18 @@
   .second-list-text {
       font-size: 13px !important;
     }
+
+}
+
+@media screen and (min-width: 241px) and (max-width: 413px) { 
+
+
+  .second-list {
+    margin-top: -8rem !important;
+  }
+
+
+
 
 }
 

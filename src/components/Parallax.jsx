@@ -211,12 +211,12 @@ const ParallaxComponent = () => {
     display: "flex",
     flexDirection: "row",
     justifyContent: "start",
-    alignItems: "flex-end",
+    alignItems: mediaQueryActiveFs ? "flex-start" : "flex-end",
     //border: "2px solid purple",
     width: "100%",
     marginLeft: "0.5rem",
-    height: mediaQueryActiveFs ? "100px" : undefined,
-    marginTop: mediaQueryActiveFs ? "-4rem" : undefined,
+    height: mediaQueryActiveFs ? "300px" : undefined,
+    marginTop: mediaQueryActiveFs ? "-14rem" : undefined,
     
   }
 
