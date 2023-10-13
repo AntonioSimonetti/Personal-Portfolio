@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import './Parallax.css';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import React, { useEffect, useState } from 'react';
 import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
@@ -14,10 +15,58 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 
 const ParallaxComponent = () => {
+  const [selectedCategory, setSelectedCategory] = useState('frontend');
+  const mediaQueryActiveFs = useMediaQuery('(max-width: 1024px)');
+  //const oldMediaQuery = useMediaQuery('(max-width: 450px)');
 
-  const mediaQueryActiveFs = useMediaQuery('(max-width: 450px)');
 
-  {/*Define the parallax logic on mouse vertical scroll*/}
+  const handleCategoryClick = (category) => {
+    // Set the selected category when a category button is clicked
+    setSelectedCategory(category);
+  };
+
+// Tech categories and their tech to be shown inside the 2nd section
+
+/*
+
+  const categoryToTechMap = {
+    frontend: ['JavaScript', 'HTML5', 'CSS3', 'React' , 'Material-ui'],
+    backend: ['Node.js'],
+    VCS: ['Git', 'GitHub'],
+    devTools: ['Vite', 'Webpack','Firebase'],
+    testing: ['Jest', 'Testing Library'],
+  };  */
+
+  const categoryToTechMap = {
+    frontend: [
+      { name: 'JavaScript', skill: 3 },  
+      { name: 'HTML5', skill: 4 },    
+      { name: 'CSS3', skill: 3 },       
+      { name: 'React', skill: 3 },    
+      { name: 'Material-ui', skill: 2 },  
+    ],
+    backend: [
+      { name: 'Node.js', skill: 1 },  
+    ],
+    VCS: [
+      { name: 'Git', skill: 3 },         
+      { name: 'GitHub', skill: 4 },    
+    ],
+    devTools: [
+      { name: 'Vite', skill: 2 },       
+      { name: 'Webpack', skill: 2 },      
+      { name: 'Firebase', skill: 2 },     
+    ],
+    testing: [
+      { name: 'Jest', skill: 1 },      
+      { name: 'Testing Library', skill: 1 },
+    ],
+  };
+  
+
+  
+
+//Define the parallax logic on mouse vertical scroll
   useEffect(() => {
     const sections = document.querySelectorAll('.parallax-section');
 
@@ -42,8 +91,7 @@ const ParallaxComponent = () => {
     };
   }, []);
   
-  
-  {/*Ensure the animation plays in its entirety once started*/}
+//Ensure the animation plays in its entirety once started
   useEffect(() => {
     const overlay = document.querySelector('.overlay');
     const mainPara = document.querySelector(".mainPara")
@@ -64,7 +112,7 @@ const ParallaxComponent = () => {
     }
   }, []);
   
-  {/*Define styles*/}
+//Define component's styles
   const containerStyle = {
     height: '300vh',
     overflow: 'hidden',
@@ -75,7 +123,6 @@ const ParallaxComponent = () => {
     alignItems: "center",
     flexDirection: "column",
     //border: "2px solid yellow",
-
   };
 
   const sectionStyle = {
@@ -108,6 +155,13 @@ const ParallaxComponent = () => {
     fontFamily: "var(--second-font)", 
   }
 
+//Theme to use the responsive fontsize from Mui
+
+  let theme = createTheme();
+  theme = responsiveFontSizes(theme);
+  
+//SECTION N1 STYLES
+
   const firstBoxContainer = {
     display: "flex",
     justifyContent: "flex-start",
@@ -116,6 +170,7 @@ const ParallaxComponent = () => {
     height: "100%",
     //border: "2px solid blue",  
     padding: "0 2rem", 
+    
   }
 
   const secondBoxContainer = {
@@ -140,39 +195,88 @@ const ParallaxComponent = () => {
     height: mediaQueryActiveFs ? "30%" : undefined,
   }
 
-  {/*Theme to use the responsive fontsize fomr Mui */}
-  let theme = createTheme();
-  theme = responsiveFontSizes(theme);
+  //SECTION N2 STYLES
 
-  const [selectedCategory, setSelectedCategory] = useState('frontend');
+  const firstList = {
+    display: "flex",
+    flexDirection: mediaQueryActiveFs ? "row" : "column",
+    justifyContent: "center",
+    alignItems: mediaQueryActiveFs ? "flex-start" : "flex-end",
+    //border: "2px solid yellow",
+    width: "100%",
+    height: mediaQueryActiveFs ? "100px" : undefined,   
+  }
 
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
+  const secondList = {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "start",
+    alignItems: "flex-end",
+    //border: "2px solid purple",
+    width: "100%",
+    marginLeft: "0.5rem",
+    height: mediaQueryActiveFs ? "100px" : undefined,
+    marginTop: mediaQueryActiveFs ? "-4rem" : undefined,
+    
+  }
+
+  const listItemButtonStyle = {
+    borderLeft: mediaQueryActiveFs ? "none":"2px solid var(--text)",
+    borderBottom: mediaQueryActiveFs ?"2px solid var(--text)" : "none",
+    width: "25%",
+    textAlign: mediaQueryActiveFs ? "center" : "left", 
+    padding: "10px",
+    fontSize: mediaQueryActiveFs ? "1px !important" : undefined,
+    //border: "2px solid purple",
+    marginRight: mediaQueryActiveFs ? "2px" : undefined, 
+    marginLeft: mediaQueryActiveFs ? "2px" : undefined, 
+
+  };
+  
+  const selectedListItemButtonStyle = {
+    borderLeft: mediaQueryActiveFs ? "none" : '2px solid var(--accent)',
+    borderBottom: mediaQueryActiveFs ? "2px solid var(--accent)" : "none",
+    width: '25%',
+    textAlign: mediaQueryActiveFs ? "center !important" : "left", 
+    padding: '10px',
+    color: "var(--accent)",
+    //border: "2px solid purple",
+    marginRight: mediaQueryActiveFs ? "2px" : undefined,
+    marginLeft: mediaQueryActiveFs ? "2px" : undefined, 
+    animation: `borderAnimation 4s infinite`, // Imposta l'animazione
+ 
   };
 
-  const categoryToTechMap = {
-    frontend: ['JavaScript', 'HTML5', 'CSS3', 'React'],
-    backend: ['Node.js'],
-    versionControl: ['GitHub', 'Git'],
-    developmentTools: ['ESLint', 'Webpack'],
-    testing: ['Jest', 'Testing Library'],
-    webDevelopmentEcosystem: ['Firebase'],
-  };
+  const itemTextStyle = {
+    fontSize: mediaQueryActiveFs ? "10px" : "20px",
+  }
 
+  const skillStyleName = {
+    fontSize: mediaQueryActiveFs ? "10px" : "21px",
+  }
+
+  const skillStyle = {
+    color: 'var(--accent)', 
+    marginLeft: "1rem", 
+    animation: "colorSkill 4s infinite",
+  } 
+
+  const skillStyleNumb = {
+  } 
 
   return (
     <div style={containerStyle}>
       <section className="parallax-section" style={{ ...sectionStyle, backgroundColor:"transparent", marginTop: "10rem"}}>
       <Grid container style={mainFlexContainer}>
             <Box style={headerDiv}>
-              <Typography variant="h3" style={headerText}>
+              <Typography variant="h3" style={headerText} className="header-text">
               <span style={{color: "var(--accent)"}}>01</span>
               </Typography> 
-              <Typography variant="h3" style={headerText}>
+              <Typography variant="h3" style={headerText} className="header-text">
               <span style={{color: "var(--accent)", fontFamily: "Helvetica, Roboto"}}>.</span>
               </Typography> 
               <Typography variant="h3" style={headerText}>
-              <span style={{color: "var(--text)", marginLeft: "1rem"}}>About Me</span>
+              <span style={{color: "var(--text)", marginLeft: "1rem"}} className="header-text">About Me</span>
               </Typography> 
             </Box>
        
@@ -211,50 +315,80 @@ const ParallaxComponent = () => {
        </Grid>
       </section>
 
-
-      <section className="parallax-section" style={{ ...sectionStyle, backgroundColor: 'transparent', border: "2px solid yellow" }}>
+      <section className="parallax-section" style={{ ...sectionStyle, backgroundColor: 'var(--dark-background-two', width: "100%" }}>
         <Grid container style={mainFlexContainer}>
             <Box style={headerDiv}>
-              <Typography variant="h3" style={headerText}>
+              <Typography variant="h3" style={headerText} className="header-text">
               <span style={{color: "var(--accent)"}}>02</span>
               </Typography> 
-              <Typography variant="h3" style={headerText}>
+              <Typography variant="h3" style={headerText} className="header-text">
               <span style={{color: "var(--accent)", fontFamily: "Helvetica, Roboto"}}>.</span>
               </Typography> 
-              <Typography variant="h3" style={headerText}>
+              <Typography variant="h3" style={headerText} className="header-text">
               <span style={{color: "var(--text)", marginLeft: "1rem"}}>Technologies</span>
               </Typography> 
             </Box>
        
             <Grid item lg={6} md={12} sm={12} xs={12} > 
-              <Box className="side-menu">
+              <Box  >
               <ThemeProvider theme={theme}>
-                 <List>
-                      {Object.keys(categoryToTechMap).map((category) => (
-                        <ListItem
-                        button
-                        key={category}
-                        selected={selectedCategory === category}
-                        onClick={() => handleCategoryClick(category)}
-                        >
-                           <ListItemText primary={category} />
-                        </ListItem>
-                      ))}
-                 </List>
+              <List style={firstList}>
+                    {Object.keys(categoryToTechMap).map((category) => {       /* Create an array of object keys for mapping over and displaying them inside the buttons */
+                          const capitalizedCategory = category.charAt(0).toUpperCase() + category.slice(1); /* Capitalize the first letter of each entry */
+                
+                          return (
+                            <ListItemButton
+                              style={                                         /* Define the button style based on if it's selected or not */
+                                selectedCategory === category      
+                                  ? selectedListItemButtonStyle
+                                  : listItemButtonStyle
+                              }
+                              key={category}
+                              selected={selectedCategory === category}
+                              onClick={() => handleCategoryClick(category)}   /* Define the selectedCategory storing the user's choise inside the state */
+                            >
+                                <p style={itemTextStyle}>{capitalizedCategory} </p>
+                            </ListItemButton>
+                          );
+                      })}
+              </List>
               </ThemeProvider>
               </Box>
             </Grid>
-              <Grid item lg={6} md={12} sm={12} xs={12} > 
-                 <ThemeProvider theme={theme}>
-                 <List>
-                      {categoryToTechMap[selectedCategory].map((tech) => (
-                        <ListItem key={tech}>
-                           <ListItemText primary={tech} />
-                        </ListItem>
-                      ))}
-                 </List>
-                 </ThemeProvider>
-              </Grid>                      
+            <Grid item lg={6} md={12} sm={12} xs={12}> 
+            <ThemeProvider theme={theme}>
+            <List style={secondList} className="second-list">
+                    <Box>
+                    {categoryToTechMap[selectedCategory].map((tech) => {
+                            const { name, skill } = tech;
+
+                            return (
+                              <ListItem key={name} >
+                                <p className="second-list-text" style={skillStyleName} >
+                                  {name}:
+                                </p>
+                              </ListItem>
+                            );
+                          })}
+                      </Box>
+                      <Box >
+                      {categoryToTechMap[selectedCategory].map((tech, i) => {
+                        const { name, skill } = tech;
+                        const animationDelayInSeconds = i * 0.2;
+
+                        return (
+                          <ListItem key={name} >
+                          <p className="second-list-text" style={skillStyleName} >
+                             <span style={{...skillStyle, animationDelay:`${animationDelayInSeconds}s` , fontSize: mediaQueryActiveFs ? "10px" : "21px"  }}>{'/'.repeat(skill)}</span>
+                             <span style={{...skillStyleNumb, fontSize: mediaQueryActiveFs ? "10px" : "21px" }}>{'/'.repeat(6 - skill)} </span>
+                          </p>
+                          </ListItem>
+                        );
+                      })}
+                      </Box>
+            </List>
+            </ThemeProvider>
+            </Grid>                           
         </Grid>      
       </section>
       <section className="parallax-section" style={{ ...sectionStyle, backgroundColor: 'blue' }}>
@@ -265,3 +399,5 @@ const ParallaxComponent = () => {
 };
 
 export default ParallaxComponent;
+
+ 

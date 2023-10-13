@@ -1,5 +1,6 @@
-.parallax-section-two {
-    border: 2px solid var(--dark-background);
+/*Overwrite mui default selected style for the itemButtonList when selected*/
+.css-16ac5r2-MuiButtonBase-root-MuiListItemButton-root.Mui-selected {
+  background-color: var(--dark-background) !important;
 }
 
 
@@ -104,6 +105,41 @@
   }
 }
 
+@keyframes borderAnimation {
+  0% {
+    border-color: var(--accent);
+  }
+
+  50% {
+    border-color: var(--accent);
+  }
+ 
+  60% {
+    border-color: var(--accent-two);
+  }
+
+  100% {
+    border-color: var(--accent);
+  }
+}
+
+@keyframes colorSkill {
+  0% {
+    color: var(--accent);
+  }
+
+  50% {
+    color: var(--accent);
+  }
+ 
+  60% {
+    color: var(--accent-two);
+  }
+
+  100% {
+    color: var(--accent);
+  }
+}
 
 /* MEDIA QUERY */
 
@@ -112,13 +148,31 @@
     font-size: 5px !important;
     margin-left: -2rem !important;
   }
+
+  .header-text {
+    font-size: 25px !important;
+  }
+
+  .second-list {
+    margin-top: -5rem !important;
+  }
+
+  .second-list-text {
+    font-size: 10px !important;
+  }
+
+
 }
 
 @media screen and (min-width: 241px) and (max-width: 320px) {
-    .mainPara {
-        font-size: 7px !important;
-        margin-left: -1rem !important;
-      }
+  .mainPara {
+      font-size: 7px !important;
+      margin-left: -1rem !important;
+    }
+
+  .second-list-text {
+      font-size: 13px !important;
+    }
 
 }
 
@@ -139,5 +193,5 @@
   }
 }
 
- 
+
 
