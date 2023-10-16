@@ -1,0 +1,9 @@
+.opacity:hover {
+    opacity: 1 !important;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+.control-dots li    {
+   background-color: var(--accent-two   ) !important;
+}
+

@@ -10,6 +10,7 @@ import React, { useEffect, useState } from 'react';
 import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import statueImage from '../assets/heroPhoto.png';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import CarouselComponent from "./Carousel";
 
 
 
@@ -26,16 +27,6 @@ const ParallaxComponent = () => {
   };
 
 // Tech categories and their tech to be shown inside the 2nd section
-
-/*
-
-  const categoryToTechMap = {
-    frontend: ['JavaScript', 'HTML5', 'CSS3', 'React' , 'Material-ui'],
-    backend: ['Node.js'],
-    VCS: ['Git', 'GitHub'],
-    devTools: ['Vite', 'Webpack','Firebase'],
-    testing: ['Jest', 'Testing Library'],
-  };  */
 
   const categoryToTechMap = {
     frontend: [
@@ -391,9 +382,26 @@ const ParallaxComponent = () => {
             </Grid>                           
         </Grid>      
       </section>
-      <section className="parallax-section" style={{ ...sectionStyle, backgroundColor: 'blue' }}>
-        Section 3
+
+      <section className="parallax-section" style={{ ...sectionStyle, width: "100%", backgroundColor: "var(--accent-three" }}>
+         <Grid container style={mainFlexContainer}>
+              <Box style={headerDiv}>
+                      <Typography variant="h3" style={headerText} className="header-text">
+                      <span style={{color: "var(--accent)"}}>03</span>
+                      </Typography> 
+                      <Typography variant="h3" style={headerText} className="header-text">
+                      <span style={{color: "var(--accent)", fontFamily: "Helvetica, Roboto"}}>.</span>
+                      </Typography> 
+                      <Typography variant="h3" style={headerText} className="header-text">
+                      <span style={{color: "var(--text)", marginLeft: "1rem"}}>Work</span>
+                      </Typography> 
+                    </Box>
+                
+             <CarouselComponent/>
+  
+         </Grid>
       </section>
+
     </div>
   );
 };
