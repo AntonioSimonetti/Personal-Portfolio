@@ -130,8 +130,7 @@ const ParallaxComponent = () => {
   const mainFlexContainer = {
     height: "100%",
     width: "100%" ,
-    //border: "2px solid var(--dark-background) ",
-    animation: "borderTransition 4s linear infinite",  
+    //border: "2px solid var(--accent) ",
   }
 
   const headerDiv = {
@@ -139,6 +138,7 @@ const ParallaxComponent = () => {
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
+    //border: "2px solid red"
   }
 
   const headerText = {
@@ -383,7 +383,7 @@ const ParallaxComponent = () => {
         </Grid>      
       </section>
 
-      <section className="parallax-section" style={{ ...sectionStyle, width: "100%", backgroundColor: "var(--accent-three" }}>
+      <section className="parallax-section" style={{ ...sectionStyle, width: "100%", backgroundColor: "var(--accent-three", }}>
          <Grid container style={mainFlexContainer}>
               <Box style={headerDiv}>
                       <Typography variant="h3" style={headerText} className="header-text">
@@ -395,10 +395,10 @@ const ParallaxComponent = () => {
                       <Typography variant="h3" style={headerText} className="header-text">
                       <span style={{color: "var(--text)", marginLeft: "1rem"}}>Work</span>
                       </Typography> 
-                    </Box>
-                
-             <CarouselComponent/>
-  
+              </Box>
+              <Box style={{ width:"100%", display:"flex", justifyContent:"center", alignItems:"center"}}>
+                 <CarouselComponent/>
+              </Box>
          </Grid>
       </section>
 

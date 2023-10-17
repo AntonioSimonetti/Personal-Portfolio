@@ -7,3 +7,14 @@
    background-color: var(--accent-two   ) !important;
 }
 
+.css-xdmu94-MuiContainer-root {
+  /*border: 2px solid var(--accent) !important;*/
+  height: 100% !important;
+  width: 100%;
+
+}
+
+.MuiCard-root.carousel-card {
+  margin: 0 !important;
+}
+
