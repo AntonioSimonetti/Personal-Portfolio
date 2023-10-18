@@ -17,7 +17,7 @@ import CarouselComponent from "./Carousel";
 
 const ParallaxComponent = () => {
   const [selectedCategory, setSelectedCategory] = useState('frontend');
-  const mediaQueryActiveFs = useMediaQuery('(max-width: 1024px)');
+  const mediaQueryActiveFs = useMediaQuery('(max-width: 1199px)');
   //const oldMediaQuery = useMediaQuery('(max-width: 450px)');
 
 
@@ -253,7 +253,9 @@ const ParallaxComponent = () => {
   } 
 
   const skillStyleNumb = {
-  } 
+  }
+  
+  
 
   return (
     <div style={containerStyle}>

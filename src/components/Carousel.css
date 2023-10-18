@@ -1,14 +1,9 @@
-.opacity:hover {
-    opacity: 1 !important;
-    transition: opacity 0.3s ease-in-out;
-  }
-
 .control-dots li    {
-   background-color: var(--accent-two   ) !important;
+   background-color: var(--accent) !important;
 }
 
+
 .css-xdmu94-MuiContainer-root {
-  /*border: 2px solid var(--accent) !important;*/
   height: 100% !important;
   width: 100%;
 
@@ -18,3 +13,51 @@
   margin: 0 !important;
 }
 
+
+@keyframes shadowPulse {
+  0% {
+    box-shadow: 0 0 15px var(--accent);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--accent);
+  }
+  100% {
+    box-shadow: 0 0 15px var(--accent);
+  }
+}
+
+.card-buttons:hover {
+  animation: shadowPulse 2s infinite;
+  transition: box-shadow 0.5s linear;
+} 
+
+.control-arrow.control-next:hover, .control-arrow.control-prev:hover {
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.carousel .control-next.control-arrow:before  {
+  border-left: 8px solid var(--accent-two) !important;
+} 
+
+.carousel .control-prev.control-arrow:before  {
+  border-right: 8px solid var(--accent-two) !important;
+
+}
+
+
+@keyframes moveAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);  /* Sposta a destra */
+  }
+  100% {
+    transform: translateX(0);  /* Torna indietro */
+  }
+}
+
+.move-button-animation {
+  animation: moveAnimation 1s infinite;  /* Durata 1 secondo, ripeti infinite volte */
+}
