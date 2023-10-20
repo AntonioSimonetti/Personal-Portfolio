@@ -1,0 +1,75 @@
+.icon-g {
+    transition: transform 0.5s !important;
+}
+  
+.icon-g:hover {
+    transform: rotate(360deg) !important;
+}
+
+.icon-l {
+    transition: transform 0.5s !important;
+}
+  
+.icon-l:hover {
+    transform: scale(1.2) !important;
+}
+
+.typo:hover {
+    animation: colorTransition 4s infinite;
+    cursor: pointer;
+}
+
+
+@keyframes borderTransition {
+    0% {
+        border-color: var(--text);
+    }
+    25% {
+        border-color: var(--accent);
+    }
+    50% {
+        border-color: var(--accent-two);
+    }
+    75% {
+        border-color: var(--accent);
+    }
+    100% {
+        border-color: var(--text);
+    }
+   
+}
+
+@keyframes colorTransition {
+    0% {
+        color: var(--text);
+    }
+    25% {
+        color: var(--accent);
+    }
+    50% {
+        color: var(--accent-two);
+    }
+    75% {
+        color: var(--accent);
+    }
+    100% {
+        color: var(--text);
+    }
+   
+}
+
+@keyframes rotateAll {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+@media screen and (max-width: 240px) {
+   .typo {
+    font-size: 5px !important;
+   }
+
+}

@@ -167,6 +167,8 @@ const CarouselComponent = () => {
         showArrows={true}
         dynamicHeight={false}
         infiniteLoop={true}
+        autoPlay={true}
+        interval={5000}
         renderThumbs={() => {}}
       
       >

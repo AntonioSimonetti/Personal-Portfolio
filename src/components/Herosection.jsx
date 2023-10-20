@@ -15,6 +15,7 @@ const Herosection = () => {
     const [displayText, setDisplayText] = useState("Hi, my name is");
     const [textColor, setTextColor] = useState("var(--text)");
     const isSmScreen = useMediaQuery('(max-width: 960px)');
+    const mediaQueryActiveFs = useMediaQuery('(max-width: 1199px)');
 
     useEffect(() => {
       // Change phrase every second
@@ -180,7 +181,18 @@ const Herosection = () => {
             Eagerly seeking opportunities to apply existing skills and acquire new ones to craft exceptional digital experiences<br/>  
             </Typography>  
 
-            <Button variant="outlined" style={{...styles.btnStyle, padding:"15px 50px",textTransform: "none", marginTop: "4rem"}} className="heroBtn">
+            <Button variant="outlined" style={{...styles.btnStyle, padding:"15px 50px",textTransform: "none", marginTop: "4rem"}} className="heroBtn"
+             onClick={() => {
+              // Scrolls based on window height and media query
+              const windowHeight = window.innerHeight; 
+              const value = mediaQueryActiveFs ? (windowHeight * 3.8) : (windowHeight * 3);
+              
+              window.scrollTo({
+                top: value,
+                behavior: "smooth",
+              });
+            }}
+             >
             <span>Check out my work!</span>
             </Button>
 

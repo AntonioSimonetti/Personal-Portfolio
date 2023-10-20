@@ -55,7 +55,18 @@
   transform: rotateX(-20deg) rotateY(40deg);
   left: 10;
   cursor: pointer;
-} 
+}
+
+.parallaxBtn {
+  transition: box-shadow 0.5s linear !important;
+}
+
+.parallaxBtn:hover {
+  transition: box-shadow 0.5s linear;
+  background-color: transparent !important;  /*Remove default Mui confing on the button*/
+  box-shadow: 0 0 15px var(--accent) ;
+}
+
 
 @keyframes moveLeft {
   0% {
@@ -204,6 +215,3 @@
     margin-top: -4rem;
   }
 }
-
-
-

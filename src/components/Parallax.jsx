@@ -1,11 +1,11 @@
 import Typography  from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Grid from '@mui/material/Grid';
 import './Parallax.css';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import React, { useEffect, useState } from 'react';
 import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
 import statueImage from '../assets/heroPhoto.png';
@@ -254,6 +254,13 @@ const ParallaxComponent = () => {
 
   const skillStyleNumb = {
   }
+
+  const btnStyle ={
+    fontFamily: "var(--second-font)",
+    color: 'var(--accent)',
+    border: "2px solid var(--accent)",
+    textTransform: "none",
+  }
   
   
 
@@ -276,21 +283,20 @@ const ParallaxComponent = () => {
             <Grid item lg={6} md={12} sm={12} xs={12}> 
                <Box style={firstBoxContainer}>
                  <ThemeProvider theme={theme}>
-                   <Typography variant="p" style={paraStyle} className="mainPara">
-                   Hello everyone, my name is <span style={{color: "var(--accent)"}}>Antonio</span>, and I began my journey in the world of web development just about a year ago. 
-                   But let me share my story with you. From a young age, I've been a computer enthusiast and a 'pc guy,' as well as a passionate gamer and football enthusiast. 
-                   I worked in the networking and help-desk field, and even though I enjoyed what I did, I wasn't entirely sure if it was my final destination as a job. Despite my interest in that field, I sensed that there was something more I wanted to explore.
+                 <Typography variant="p" style={paraStyle} className="mainPara">
+                   Hello everyone, I’m <span style={{color: "var(--accent)"}}>Antonio</span>, and I started my journey in the world of web development about a year ago. 
+                   Let me share my story with you. For my whole life, I've been a computer enthusiast and a 'pc guy,' as well as a passionate gamer and football supporter. 
+                   I worked in the networking and help-desk fields, but even though I enjoyed what I was doing, I wasn't entirely sure if it was my final career destination. Despite my interest in that field, I sensed that there was something more I wanted to explore.
                   <br/>
                   <br/>
-                  That desire to explore and learn something new drove me to take a bold step. 
-                  I embarked on my journey into the world of web development, and my determination to learn made the seemingly impossible possible. 
+                  The desire to explore and learn something new drove me to take a bold step. I embarked on my journey into the world of web development, and my determination made the seemingly impossible possible. 
                   I started with <span style={{color: "var(--accent)"}}>HTML and CSS</span>, then I delved into <span style={{color: "var(--accent)"}}>JavaScript, React, Node</span>, and other technologies. 
                   I also found myself drawn to <span style={{color: "var(--accent)"}}>3D technologies like three.js</span>.
-                  While it's a desire of mine to master them, I've decided to do so after completing my path to becoming a <span style={{color: "var(--accent)"}}>full-stack developer</span>, as I currently consider myself primarily a <span style={{color: "var(--accent)"}}>front-end developer</span>.
+                  Even though it is a desire of mine to master them, I've decided to do so after completing my path to becoming a <span style={{color: "var(--accent)"}}>full-stack developer</span>, as I currently consider myself primarily a <span style={{color: "var(--accent)"}}>front-end developer</span>.
                   <br/>
                   <br/>
                   Before I committed to web development, it's important to note that I explored marketing during my career journey.<span style={{color: "var(--accent)"}}>
-                  However, I quickly realized it wasn't the place for me, even if it was a nice stays.</span> This realization led me to transition <span style={{color: "var(--accent)", fontWeight: "bolder"}}>boldly</span> into web development.
+                  However, I quickly realized it wasn't the place for me, even though it was a nice experience.</span> This realization led me to switch <span style={{color: "var(--accent)", fontWeight: "bolder"}}>boldly</span> into web development.
                   <br/>
                   <br/>
                   My journey has been a continuous and self-driven learning experience. <span style={{color: "var(--accent)"}}>I've never stopped seeking new ways to improve my skills and knowledge.</span> I'm determined to grow and contribute with my dedication and passion.
@@ -401,6 +407,15 @@ const ParallaxComponent = () => {
               <Box style={{ width:"100%", display:"flex", justifyContent:"center", alignItems:"center"}}>
                  <CarouselComponent/>
               </Box>
+              <Box style={{width: "100%", display:"flex", justifyContent:"center", alignItems:"center"}}>
+                 <Button variant="outlined" style={btnStyle} className="parallaxBtn"
+                  onClick={() => {window.open("https://github.com/AntonioSimonetti?tab=repositories", '_blank');  
+                    
+                  }} >
+                  <span>More on GitHub</span>
+                 </Button>
+             </Box>
+           
          </Grid>
       </section>
 
