@@ -7,8 +7,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import provaImage from "../assets/page1.png";
 import pulseImg from "../assets/pulse.jpg";
 import pcShopImg from "../assets/pcShop.png";
-import pokeImg from "../assets/pokeFinder.png";
-import weatherAppImg from "../assets/weatherApp.png";
+import quizApp from "../assets/QuizApp.png";
+import fbs from "../assets/flight-booking.png";
 import { Box } from '@mui/system';
 
 
@@ -16,14 +16,26 @@ import { Box } from '@mui/system';
 const CarouselComponent = () => {  
   const [isHovered, setIsHovered] = useState(false);
 
-
   const mediaQueryActiveFs = useMediaQuery('(max-width: 1024px)');
   const mediaQueryActiveSmall = useMediaQuery('(max-width: 450px)');
 
-
-
-
   const cardData = [
+    {
+      title: 'quiz app',
+      image: quizApp,
+      linkCode: 'https://github.com/AntonioSimonetti/QuizAppFE',
+      linkLive: 'https://quizappfe-dmhrdjdxhmdfabgf.eastus-01.azurewebsites.net/',
+      isHovered: false,
+      disabled: false,
+    },
+    {
+      title: 'flight-booking system',
+      image: fbs,
+      linkCode: 'https://github.com/AntonioSimonetti/flight-booking',
+      linkLive: 'disabled',
+      isHovered: false,
+      disabled: true,
+    },
     {
       title: 'personal portfolio',
       image: provaImage,
@@ -48,22 +60,7 @@ const CarouselComponent = () => {
         isHovered: false,
         disabled: false,
     },
-    {
-      title: 'where is waldo clone',
-      image: pokeImg,
-      linkCode: 'https://github.com/AntonioSimonetti/whereIsWaldoCloneTOP',
-      linkLive: 'https://antoniosimonetti.github.io/whereIsWaldoCloneTOP/',
-      isHovered: false,
-      disabled: false,
-    },
-    {
-        title: 'weather app',
-        image: weatherAppImg,
-        linkCode: 'https://github.com/AntonioSimonetti/weatherAppTOP',
-        linkLive: 'https://antoniosimonetti.github.io/weatherAppTOP/',
-        isHovered: false,
-        disabled: false,
-    },
+   
 
   ]; 
 

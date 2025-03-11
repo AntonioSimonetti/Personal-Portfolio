@@ -177,7 +177,7 @@ const Herosection = () => {
               </svg>
             </div>
             <Typography variant="p" style={styles.paraStyle} className="lastParaHero">
-            I’m an aspiring web developer with a deep passion for the ever-evolving world of web technologies.<br/> 
+            Web developer with a deep passion for the ever-evolving world of web technologies.<br/> 
             Eagerly seeking opportunities to apply existing skills and acquire new ones to craft exceptional digital experiences<br/>  
             </Typography>  
 

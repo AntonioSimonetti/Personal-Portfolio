@@ -30,14 +30,19 @@ const ParallaxComponent = () => {
 
   const categoryToTechMap = {
     frontend: [
-      { name: 'JavaScript', skill: 3 },  
-      { name: 'HTML5', skill: 4 },    
-      { name: 'CSS3', skill: 3 },       
+      { name: 'JavaScript/TypeScript', skill: 3 },        
       { name: 'React', skill: 3 },    
-      { name: 'Material-ui', skill: 2 },  
+      { name: 'Redux', skill: 2 },
+      { name: 'Spring', skill: 2 },    
+      { name: 'HTML5', skill: 4 },    
+      { name: 'CSS3', skill: 3 }, 
     ],
     backend: [
-      { name: 'Node.js', skill: 1 },  
+      { name: 'Java', skill: 3 },
+      { name: '.NET', skill: 2 },  
+    ],
+    database: [
+      { name: 'MySQL', skill: 2 },
     ],
     VCS: [
       { name: 'Git', skill: 3 },         
@@ -46,7 +51,8 @@ const ParallaxComponent = () => {
     devTools: [
       { name: 'Vite', skill: 2 },       
       { name: 'Webpack', skill: 2 },      
-      { name: 'Firebase', skill: 2 },     
+      { name: 'Firebase', skill: 2 },
+      { name: 'Azure', skill: 2 },       
     ],
     testing: [
       { name: 'Jest', skill: 1 },      
@@ -281,30 +287,26 @@ const ParallaxComponent = () => {
             </Box>
        
             <Grid item lg={6} md={12} sm={12} xs={12}> 
-               <Box style={firstBoxContainer}>
-                 <ThemeProvider theme={theme}>
-                 <Typography variant="p" style={paraStyle} className="mainPara">
-                   Hello everyone, I’m <span style={{color: "var(--accent)"}}>Antonio</span>, and I started my journey in the world of web development about a year ago. 
-                   Let me share my story with you. For my whole life, I've been a computer enthusiast and a 'pc guy,' as well as a passionate gamer and football supporter. 
-                   I worked in the networking and help-desk fields, but even though I enjoyed what I was doing, I wasn't entirely sure if it was my final career destination. Despite my interest in that field, I sensed that there was something more I wanted to explore.
-                  <br/>
-                  <br/>
-                  The desire to explore and learn something new drove me to take a bold step. I embarked on my journey into the world of web development, and my determination made the seemingly impossible possible. 
-                  I started with <span style={{color: "var(--accent)"}}>HTML and CSS</span>, then I delved into <span style={{color: "var(--accent)"}}>JavaScript, React, Node</span>, and other technologies. 
-                  I also found myself drawn to <span style={{color: "var(--accent)"}}>3D technologies like three.js</span>.
-                  Even though it is a desire of mine to master them, I've decided to do so after completing my path to becoming a <span style={{color: "var(--accent)"}}>full-stack developer</span>, as I currently consider myself primarily a <span style={{color: "var(--accent)"}}>front-end developer</span>.
-                  <br/>
-                  <br/>
-                  Before I committed to web development, it's important to note that I explored marketing during my career journey.<span style={{color: "var(--accent)"}}>
-                  However, I quickly realized it wasn't the place for me, even though it was a nice experience.</span> This realization led me to switch <span style={{color: "var(--accent)", fontWeight: "bolder"}}>boldly</span> into web development.
-                  <br/>
-                  <br/>
-                  My journey has been a continuous and self-driven learning experience. <span style={{color: "var(--accent)"}}>I've never stopped seeking new ways to improve my skills and knowledge.</span> I'm determined to grow and contribute with my dedication and passion.
+              <Box style={firstBoxContainer}>
+                <ThemeProvider theme={theme}>
+                  <Typography variant="p" style={paraStyle} className="mainPara">
+                    Antonio è un appassionato di tecnologia, gaming e innovazione. Dopo esperienze nel networking, nel supporto tecnico e nel marketing, ha scoperto che la sua vera passione è lo sviluppo. 
+                    <br />
+                    Le tecnologie che usa principalmente sono <span style={{color: "var(--accent)"}}>TypeScript, Java</span> e <span style={{color: "var(--accent)"}}>C#</span>, ma non ha paura di affrontare nuovi linguaggi e sfide, convinto che <i>"sono solo strumenti"</i> per creare progetti magnifici. 
+                    <br />
+                    Sempre motivato a crescere, Antonio è impegnato a dare il suo contributo con passione al mondo della tecnologia.
+                    <br />
+                    <br />
+                    Antonio is passionate about technology, gaming, and innovation. After gaining experience in networking, technical support, and marketing, he discovered that his true passion lies in development. 
+                    <br />
+                    The technologies he primarily uses are <span style={{color: "var(--accent)"}}>TypeScript, Java</span>, and <span style={{color: "var(--accent)"}}>C#</span>, but he's not afraid to take on new languages and challenges, believing that <i>"they are just tools"</i> to build amazing projects. 
+                    <br />
+                    Always motivated to grow, Antonio is committed to contributing with passion to the world of technology.
+                  </Typography>
+                </ThemeProvider>
+              </Box>
+            </Grid>
 
-                   </Typography>
-                 </ThemeProvider>
-                </Box>
-             </Grid>
              <Grid item lg={6} md={12} sm={12} xs={12} > 
                 <Box style={secondBoxContainer} className="secondBoxContainer">
                  <div className="overlay"></div>
